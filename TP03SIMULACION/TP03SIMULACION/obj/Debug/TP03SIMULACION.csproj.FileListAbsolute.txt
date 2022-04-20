@@ -10,3 +10,17 @@ C:\Users\yago\SIMULACION_TRABAJOS\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SI
 C:\Users\yago\SIMULACION_TRABAJOS\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.exe
 C:\Users\yago\SIMULACION_TRABAJOS\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.pdb
 C:\Users\yago\SIMULACION_TRABAJOS\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.DistrUniforme.FormGraficoUniforme.resources
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.csproj.AssemblyReference.cache
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.DistrUniforme.FormGraficoUniforme.resources
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.DistrUniforme.FormUniforme.resources
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.Form1.resources
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.FormExponencial.resources
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.Properties.Resources.resources
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.csproj.GenerateResource.cache
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.csproj.CoreCompileInputs.cache
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.exe
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.pdb
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\bin\Debug\TP03SIMULACION.exe.config
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\bin\Debug\TP03SIMULACION.exe
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\bin\Debug\TP03SIMULACION.pdb
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.FormGraficoExponencial.resources
