@@ -23,5 +23,27 @@ namespace TP03SIMULACION
             FormUniforme g = new FormUniforme(Convert.ToDouble(txtA.Text), Convert.ToDouble(txtB.Text));
             g.Show();
         }
+
+        private void txtSiguienteExpo_Click(object sender, EventArgs e)
+        {
+            double lambda = Convert.ToDouble(txtLambda.Text);
+            double media = Convert.ToDouble(txtMedia.Text);
+
+
+            FormExponencial a = new FormExponencial( lambda , media );
+            a.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cxExponencial_CheckedChanged(object sender, EventArgs e)
+        {
+            txtLambda.Enabled = txtMedia.Enabled = true;
+            txtA.Enabled = txtB.Enabled = false;
+
+        }
     }
 }

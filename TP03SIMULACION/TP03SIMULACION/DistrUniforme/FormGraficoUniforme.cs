@@ -21,8 +21,8 @@ namespace TP03SIMULACION.DistrUniforme
         private double numA;
         private double numB;
         private int n;
+        Series Series1 = new Series();
         Series Series2 = new Series();
-        Series Series3 = new Series();
 
 
 
@@ -104,11 +104,11 @@ namespace TP03SIMULACION.DistrUniforme
 
         private  double[] frecuenciaObservadaCalculada(double [,] intervalos)
         {
-            double[] frecuencia = new double[cantIntervalos];
+            double[] frecuencia = new double[Convert.ToInt32(txtCantIntervalos.Text)];
 
             for (int i = 0; i < num.Length; i++)
             {
-                for (int j = 0; j < cantIntervalos; j++)
+                for (int j = 0; j < Convert.ToInt32(txtCantIntervalos.Text); j++)
                 {
                     if (num[i] >= intervalos[j, 0] && num[i] < intervalos[j,1])
                     {
@@ -162,7 +162,7 @@ namespace TP03SIMULACION.DistrUniforme
 
         }
 
-/*/        public void generarGrafico(double[,] intervalos, double [] frecuencia)
+        public void generarGrafico(double[,] intervalos, double [] frecuencia)
         {
             chrtUniforme.Series["Series1"].Points.Clear();
             chrtUniforme.Series["Series2"].Points.Clear();
@@ -190,7 +190,7 @@ namespace TP03SIMULACION.DistrUniforme
             }
 
         }
-/*/
+
         private void dgvFrecuencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -213,7 +213,7 @@ namespace TP03SIMULACION.DistrUniforme
                 dgvFrecuencia.Rows.Add(Math.Truncate(10000 * intervalos[i, 0]) / 10000, Math.Truncate(10000 * intervalos[i, 1]) / 10000, marcaClase, frecuenciaObservada[i], probabilidad, calcularFrecuenciaEsperada(probabilidad, num.Length));
 
             }
-            //generarGrafico(intervalos, frecuenciaObservada);
+            generarGrafico(intervalos, frecuenciaObservada);
         }
     }
     
