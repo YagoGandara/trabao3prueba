@@ -13,6 +13,7 @@ namespace TP03SIMULACION
 {
     public partial class Form1 : Form
     {
+        private bool bandera;
         public Form1()
         {
             InitializeComponent();
@@ -42,7 +43,10 @@ namespace TP03SIMULACION
         private void cxExponencial_CheckedChanged(object sender, EventArgs e)
         {
             txtLambda.Enabled = txtMedia.Enabled = true;
-            txtA.Enabled = txtB.Enabled = false;
+            txtA.Enabled = txtB.Enabled = txtDesvEstandar.Enabled = txtMediaMuller.Enabled = false;
+            btnSiguienteExpo.Enabled = true;
+            btnSiguienteNormalMuller.Enabled = false;
+            btnUniformess.Enabled = false;
 
         }
 
@@ -50,7 +54,10 @@ namespace TP03SIMULACION
         {
             txtLambda.Enabled = txtMedia.Enabled = false;
             txtA.Enabled = txtB.Enabled = true;
+            txtDesvEstandar.Enabled = txtMediaMuller.Enabled = false;
             btnUniformess.Enabled = true;
+            btnSiguienteExpo.Enabled = false;
+
 
         }
 
@@ -59,12 +66,29 @@ namespace TP03SIMULACION
             txtDesvEstandar.Enabled = txtMediaMuller.Enabled = true;
             txtA.Enabled = txtLambda.Enabled = txtB.Enabled = txtMedia.Enabled = false;
             btnUniformess.Enabled = false;
+            btnSiguienteExpo.Enabled = false;
+            bandera = true;
+            btnSiguienteNormalMuller.Enabled = true;
+
+
         }
 
         private void btnSiguienteNormalMuller_Click(object sender, EventArgs e)
         {
-            FormNMuller formNNMuller = new FormNMuller(Convert.ToDouble(txtDesvEstandar.Text), Convert.ToDouble(txtMediaMuller.Text));
+            FormNMuller formNNMuller = new FormNMuller(Convert.ToDouble(txtDesvEstandar.Text), Convert.ToDouble(txtMediaMuller.Text) , bandera);
             formNNMuller.Show();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtDesvEstandar.Enabled = txtMediaMuller.Enabled = true;
+            txtA.Enabled = txtLambda.Enabled = txtB.Enabled = txtMedia.Enabled = false;
+            btnUniformess.Enabled = false;
+            btnSiguienteExpo.Enabled = false;
+            bandera = false;
+            btnSiguienteNormalMuller.Enabled = true;
+
+
         }
     }
 }

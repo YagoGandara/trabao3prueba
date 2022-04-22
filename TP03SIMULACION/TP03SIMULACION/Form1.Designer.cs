@@ -47,6 +47,7 @@ namespace TP03SIMULACION
             this.btnSiguienteNormalMuller = new System.Windows.Forms.Button();
             this.txtMediaMuller = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtB
@@ -214,12 +215,24 @@ namespace TP03SIMULACION
             this.label6.TabIndex = 17;
             this.label6.Text = "Media:";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(687, 117);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(121, 17);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "Normal Convolucion";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(809, 340);
+            this.ClientSize = new System.Drawing.Size(936, 418);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtMediaMuller);
             this.Controls.Add(this.txtDesvEstandar);
@@ -267,6 +280,7 @@ namespace TP03SIMULACION
         private System.Windows.Forms.Button btnSiguienteNormalMuller;
         private System.Windows.Forms.TextBox txtMediaMuller;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

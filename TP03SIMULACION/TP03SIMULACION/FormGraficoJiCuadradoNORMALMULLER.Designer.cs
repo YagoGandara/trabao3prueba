@@ -55,6 +55,7 @@ namespace TP03SIMULACION
             this.lblCalculadoRes = new System.Windows.Forms.Label();
             this.lblTablaRes = new System.Windows.Forms.Label();
             this.lblConclusion = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFrecuenciaNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chDistribucionNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiCuadrado)).BeginInit();
@@ -236,11 +237,22 @@ namespace TP03SIMULACION
             this.lblConclusion.Size = new System.Drawing.Size(0, 13);
             this.lblConclusion.TabIndex = 13;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(933, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(168, 26);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "CHI CUADRADO";
+            // 
             // FormGraficoJiCuadradoNORMALMULLER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblConclusion);
             this.Controls.Add(this.lblTablaRes);
             this.Controls.Add(this.lblCalculadoRes);
@@ -288,5 +300,6 @@ namespace TP03SIMULACION
         private System.Windows.Forms.Label lblCalculadoRes;
         private System.Windows.Forms.Label lblTablaRes;
         private System.Windows.Forms.Label lblConclusion;
+        private System.Windows.Forms.Label label4;
     }
 }

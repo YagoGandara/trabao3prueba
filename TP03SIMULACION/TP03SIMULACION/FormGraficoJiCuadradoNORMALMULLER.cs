@@ -37,29 +37,32 @@ namespace TP03SIMULACION
 
         private void btnGenerarGrafico_Click(object sender, EventArgs e)
         {
-            dgvFrecuenciaNormal.Rows.Clear();
-            //dgvChiCuadrado.Rows.Clear();
-            //chrtDistribucion.Visible = true;
 
-            double[,] intervalos = calcularIntervalos();
-            double[] frecuenciaObservada = calcularFrecuenciaObservada(intervalos);
+                dgvFrecuenciaNormal.Rows.Clear();
+                dgvChiCuadrado.Rows.Clear();
+
+                double[,] intervalos = calcularIntervalos();
+                double[] frecuenciaObservada = calcularFrecuenciaObservada(intervalos);
 
 
-            for (int i = 0; i < frecuenciaObservada.Length; i++)
-            {
-                float marcaClase = (float)(intervalos[i, 0] + intervalos[i, 1]) / 2;
-                float probabilidad = Math.Abs(calcularProbabilidad(marcaClase, intervalos[i, 0], intervalos[i, 1]));
+                for (int i = 0; i < frecuenciaObservada.Length; i++)
+                {
+                    float marcaClase = (float)(intervalos[i, 0] + intervalos[i, 1]) / 2;
+                    float probabilidad = Math.Abs(calcularProbabilidad(marcaClase, intervalos[i, 0], intervalos[i, 1]));
 
-                dgvFrecuenciaNormal.Rows.Add(Math.Truncate(10000 * intervalos[i, 0]) / 10000, Math.Truncate(10000 * intervalos[i, 1]) / 10000, marcaClase, frecuenciaObservada[i], probabilidad, calcularFrecuenciaEsperada(probabilidad, numeros.Length));
-            }
+                    dgvFrecuenciaNormal.Rows.Add(Math.Truncate(10000 * intervalos[i, 0]) / 10000, Math.Truncate(10000 * intervalos[i, 1]) / 10000, marcaClase, frecuenciaObservada[i], probabilidad, calcularFrecuenciaEsperada(probabilidad, numeros.Length));
+                }
 
-            generarGrafico(intervalos, frecuenciaObservada);
-            string[,] intervalosChi = chiCuadrado();
-            lblCalculadoRes.Text = getAcumulado().ToString();
-            lblCalculadoRes.Visible = true;
-            lblTablaRes.Text = tablaChiCuadrado().ToString();
-            lblTablaRes.Visible = true;
-            conclusion();
+                generarGrafico(intervalos, frecuenciaObservada);
+                string[,] intervalosChi = chiCuadrado();
+                lblCalculadoRes.Text = getAcumulado().ToString();
+                lblCalculadoRes.Visible = true;
+                lblTablaRes.Text = tablaChiCuadrado().ToString();
+                lblTablaRes.Visible = true;
+                conclusion();
+            
+
+
 
 
         }
@@ -71,6 +74,8 @@ namespace TP03SIMULACION
 
             return probabilidad;
         }
+
+
 
         private double[,] calcularIntervalos()
         {
@@ -212,17 +217,19 @@ namespace TP03SIMULACION
             if (gradosLibertad < 1) gradosLibertad = 1;
             return (float)Math.Round(ChiSquared.InvCDF(gradosLibertad, 0.95), 4);
         }
+
         public string getNombre(bool bandera)
         {
             string txt;
             if (bandera)
             {
-                return txt = "normal muller";
+                txt= "normal muller";
             }
             else
             {
-                return null;
+                txt= "normal convolución";
             }
+            return txt;
 
         }
         public void conclusion()
