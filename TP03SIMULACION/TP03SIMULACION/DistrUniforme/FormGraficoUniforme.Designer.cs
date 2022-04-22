@@ -29,12 +29,12 @@ namespace TP03SIMULACION.DistrUniforme
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chrtUniforme = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,26 +69,28 @@ namespace TP03SIMULACION.DistrUniforme
             // 
             // chrtUniforme
             // 
-            chartArea11.Name = "ChartArea1";
-            this.chrtUniforme.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.chrtUniforme.Legends.Add(legend11);
-            this.chrtUniforme.Location = new System.Drawing.Point(6, 438);
+            chartArea1.Name = "ChartArea1";
+            this.chrtUniforme.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chrtUniforme.Legends.Add(legend1);
+            this.chrtUniforme.Location = new System.Drawing.Point(4, 356);
+            this.chrtUniforme.Margin = new System.Windows.Forms.Padding(2);
             this.chrtUniforme.Name = "chrtUniforme";
-            series11.ChartArea = "ChartArea1";
-            series11.Legend = "Legend1";
-            series11.Name = "Series1";
-            this.chrtUniforme.Series.Add(series11);
-            this.chrtUniforme.Size = new System.Drawing.Size(813, 448);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chrtUniforme.Series.Add(series1);
+            this.chrtUniforme.Size = new System.Drawing.Size(610, 364);
             this.chrtUniforme.TabIndex = 0;
             this.chrtUniforme.Text = "DistribucionUniforme";
             this.chrtUniforme.Click += new System.EventHandler(this.chrtUniforme_Click);
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(12, 25);
+            this.btnVolver.Location = new System.Drawing.Point(9, 20);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(56, 19);
             this.btnVolver.TabIndex = 2;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -97,9 +99,10 @@ namespace TP03SIMULACION.DistrUniforme
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(106, 28);
+            this.label1.Location = new System.Drawing.Point(127, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 17);
+            this.label1.Size = new System.Drawing.Size(115, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Cantidad De Intervalos";
             // 
@@ -113,11 +116,12 @@ namespace TP03SIMULACION.DistrUniforme
             this.FrecuenciaEsperada2,
             this.C2,
             this.Cacu2});
-            this.dgvChi.Location = new System.Drawing.Point(849, 140);
+            this.dgvChi.Location = new System.Drawing.Point(637, 114);
+            this.dgvChi.Margin = new System.Windows.Forms.Padding(2);
             this.dgvChi.Name = "dgvChi";
             this.dgvChi.RowHeadersWidth = 51;
             this.dgvChi.RowTemplate.Height = 24;
-            this.dgvChi.Size = new System.Drawing.Size(931, 265);
+            this.dgvChi.Size = new System.Drawing.Size(698, 215);
             this.dgvChi.TabIndex = 9;
             // 
             // Desde2
@@ -170,26 +174,28 @@ namespace TP03SIMULACION.DistrUniforme
             // 
             // chrtChi
             // 
-            chartArea12.Name = "ChartArea1";
-            this.chrtChi.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.chrtChi.Legends.Add(legend12);
-            this.chrtChi.Location = new System.Drawing.Point(902, 438);
+            chartArea2.Name = "ChartArea1";
+            this.chrtChi.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chrtChi.Legends.Add(legend2);
+            this.chrtChi.Location = new System.Drawing.Point(676, 356);
+            this.chrtChi.Margin = new System.Windows.Forms.Padding(2);
             this.chrtChi.Name = "chrtChi";
-            series12.ChartArea = "ChartArea1";
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            this.chrtChi.Series.Add(series12);
-            this.chrtChi.Size = new System.Drawing.Size(810, 481);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chrtChi.Series.Add(series2);
+            this.chrtChi.Size = new System.Drawing.Size(608, 391);
             this.chrtChi.TabIndex = 10;
             this.chrtChi.Text = "Chi-Cuadrado";
             this.chrtChi.Click += new System.EventHandler(this.chrtChi_Click);
             // 
             // txtCantIntervalos
             // 
-            this.txtCantIntervalos.Location = new System.Drawing.Point(128, 63);
+            this.txtCantIntervalos.Location = new System.Drawing.Point(246, 20);
+            this.txtCantIntervalos.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantIntervalos.Name = "txtCantIntervalos";
-            this.txtCantIntervalos.Size = new System.Drawing.Size(100, 22);
+            this.txtCantIntervalos.Size = new System.Drawing.Size(76, 20);
             this.txtCantIntervalos.TabIndex = 11;
             this.txtCantIntervalos.TextChanged += new System.EventHandler(this.txtCantIntervalos_TextChanged);
             // 
@@ -203,11 +209,12 @@ namespace TP03SIMULACION.DistrUniforme
             this.frecuenciaObservada,
             this.probabilidad,
             this.frecuenciaEsperada});
-            this.dgvFrecuencia.Location = new System.Drawing.Point(12, 140);
+            this.dgvFrecuencia.Location = new System.Drawing.Point(9, 114);
+            this.dgvFrecuencia.Margin = new System.Windows.Forms.Padding(2);
             this.dgvFrecuencia.Name = "dgvFrecuencia";
             this.dgvFrecuencia.RowHeadersWidth = 51;
             this.dgvFrecuencia.RowTemplate.Height = 24;
-            this.dgvFrecuencia.Size = new System.Drawing.Size(807, 265);
+            this.dgvFrecuencia.Size = new System.Drawing.Size(605, 215);
             this.dgvFrecuencia.TabIndex = 12;
             this.dgvFrecuencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFrecuencia_CellContentClick);
             // 
@@ -255,20 +262,22 @@ namespace TP03SIMULACION.DistrUniforme
             // 
             // Generar2
             // 
-            this.Generar2.Location = new System.Drawing.Point(310, 28);
+            this.Generar2.Location = new System.Drawing.Point(343, 6);
+            this.Generar2.Margin = new System.Windows.Forms.Padding(2);
             this.Generar2.Name = "Generar2";
-            this.Generar2.Size = new System.Drawing.Size(84, 23);
+            this.Generar2.Size = new System.Drawing.Size(63, 47);
             this.Generar2.TabIndex = 13;
-            this.Generar2.Text = "Generar2";
+            this.Generar2.Text = "Generar Grafico";
             this.Generar2.UseVisualStyleBackColor = true;
             this.Generar2.Click += new System.EventHandler(this.Generar2_Click);
             // 
             // lbl2
             // 
             this.lbl2.AutoSize = true;
-            this.lbl2.Location = new System.Drawing.Point(1006, 25);
+            this.lbl2.Location = new System.Drawing.Point(754, 20);
+            this.lbl2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(111, 17);
+            this.lbl2.Size = new System.Drawing.Size(84, 13);
             this.lbl2.TabIndex = 14;
             this.lbl2.Text = "Valor Calculado:";
             this.lbl2.Click += new System.EventHandler(this.label2_Click);
@@ -276,34 +285,38 @@ namespace TP03SIMULACION.DistrUniforme
             // lblCalculado
             // 
             this.lblCalculado.AutoSize = true;
-            this.lblCalculado.Location = new System.Drawing.Point(1123, 25);
+            this.lblCalculado.Location = new System.Drawing.Point(842, 20);
+            this.lblCalculado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCalculado.Name = "lblCalculado";
-            this.lblCalculado.Size = new System.Drawing.Size(0, 17);
+            this.lblCalculado.Size = new System.Drawing.Size(0, 13);
             this.lblCalculado.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1006, 66);
+            this.label2.Location = new System.Drawing.Point(754, 54);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 17);
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 16;
             this.label2.Text = "Valor de Tabla";
             // 
             // lblTabla
             // 
             this.lblTabla.AutoSize = true;
-            this.lblTabla.Location = new System.Drawing.Point(1113, 66);
+            this.lblTabla.Location = new System.Drawing.Point(835, 54);
+            this.lblTabla.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTabla.Name = "lblTabla";
-            this.lblTabla.Size = new System.Drawing.Size(0, 17);
+            this.lblTabla.Size = new System.Drawing.Size(0, 13);
             this.lblTabla.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1006, 100);
+            this.label3.Location = new System.Drawing.Point(754, 81);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 17);
+            this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 18;
             this.label3.Text = "Conclusion: ";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -311,17 +324,18 @@ namespace TP03SIMULACION.DistrUniforme
             // lblConclusion
             // 
             this.lblConclusion.AutoSize = true;
-            this.lblConclusion.Location = new System.Drawing.Point(1097, 100);
+            this.lblConclusion.Location = new System.Drawing.Point(823, 81);
+            this.lblConclusion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConclusion.Name = "lblConclusion";
-            this.lblConclusion.Size = new System.Drawing.Size(0, 17);
+            this.lblConclusion.Size = new System.Drawing.Size(0, 13);
             this.lblConclusion.TabIndex = 19;
             // 
             // FormGraficoUniforme
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1863, 991);
+            this.ClientSize = new System.Drawing.Size(1171, 609);
             this.Controls.Add(this.lblConclusion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTabla);
@@ -336,6 +350,7 @@ namespace TP03SIMULACION.DistrUniforme
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.chrtUniforme);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormGraficoUniforme";
             this.Text = "Grafico Uniforme";
             this.Load += new System.EventHandler(this.FormGraficoUniforme_Load);

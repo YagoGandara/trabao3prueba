@@ -199,14 +199,80 @@ namespace TP03SIMULACION.DistrUniforme
             //lblTabla.Text = tablaChiCuadrado().ToString();
             //conclusion();
         }
+
+        public string[,] chiCuadrado()
+        {
+            float cAcum = 0;
+            String[,] intervalos = new String[dgvFrecuencia.Rows.Count, 4];
+            int j = 0;
+            for (int i = 0; i < dgvFrecuencia.Rows.Count; i++)
+            {
+                string desde = dgvFrecuencia.Rows[i].Cells["desde"].Value.ToString();
+                string hasta = dgvFrecuencia.Rows[i].Cells["hasta"].Value.ToString();
+                float sumaEsperada = (float)Convert.ToDouble(dgvFrecuencia.Rows[i].Cells["frecuenciaEsperada"].Value);
+                int sumaObservada = Convert.ToInt32(dgvFrecuencia.Rows[i].Cells["frecuenciaObservada"].Value);
+
+                while (sumaEsperada < 5 || verificarProximos(i))
+                {
+                    if (i == dgvFrecuencia.Rows.Count - 1)
+                        break;
+                    i++;
+                    sumaEsperada += (float)Convert.ToDouble(dgvFrecuencia.Rows[i].Cells["frecuenciaEsperada"].Value);
+                    sumaObservada += Convert.ToInt32(dgvFrecuencia.Rows[i].Cells["frecuenciaObservada"].Value);
+                    hasta = dgvFrecuencia.Rows[i].Cells["hasta"].Value.ToString();
+
+                }
+                float c = (float)Math.Pow(((float)sumaEsperada - (float)sumaObservada), 2) / sumaEsperada;
+                cAcum += c;
+                dgvChi.Rows.Add(desde, hasta, sumaObservada, sumaEsperada, Math.Truncate(10000 * c) / 10000, Math.Truncate(10000 * cAcum) / 10000);
+                intervalos[j, 0] = desde;
+                intervalos[j, 1] = hasta;
+                intervalos[j, 2] = sumaObservada.ToString();
+                intervalos[j, 3] = sumaEsperada.ToString();
+                j++;
+            }
+
+            return intervalos;
+
+        }
+
+        public bool verificarProximos(int i)
+        {
+            int suma = 0;
+            for (int j = i + 1; j < dgvFrecuencia.Rows.Count; j++)
+            {
+                suma += Convert.ToInt32(dgvFrecuencia.Rows[j].Cells["frecuenciaEsperada"].Value);
+                if (suma >= 5)
+                    break;
+            }
+            return suma < 5;
+        }
+
+
+
+
+
         public float tablaChiCuadrado()
         {
             return (float)Math.Round(ChiSquared.InvCDF(dgvChi.Rows.Count - 1, 0.95), 4);
         }
+
         public float getAcumulado()
         {
             return (float)Convert.ToDouble(dgvChi.Rows[dgvChi.Rows.Count - 1].Cells["Css"].Value);
         }
+
+
+
+
+
+
+
+
+
+
+
+
         public void generarGraficoChi(string[,] intervalos)
         {
             chrtChi.Series["Series1"].Points.Clear();
@@ -237,55 +303,11 @@ namespace TP03SIMULACION.DistrUniforme
 
         }
 
-        public string [,] chiCuadrado()
-        {
-            float cAcum = 0;
-            String[,] intervalos = new String[dgvFrecuencia.Rows.Count, 4];
-            int j = 0;
-            for (int i = 0; i < dgvFrecuencia.Rows.Count; i++)
-            {
-                string desde = dgvFrecuencia.Rows[i].Cells["desde"].Value.ToString();
-                string hasta = dgvFrecuencia.Rows[i].Cells["hasta"].Value.ToString();
-                float sumaEsperada = (float)Convert.ToDouble(dgvFrecuencia.Rows[i].Cells["frecuenciaEsperada"].Value);
-                int sumaObservada = Convert.ToInt32(dgvFrecuencia.Rows[i].Cells["frecuenciaObservada"].Value);
 
-                while (sumaEsperada < 5 || verificarProximos(i))
-                {
-                    if (i == (dgvFrecuencia.Rows.Count - 1))
-                        break;
-                    i++;
-                    sumaEsperada += (float)Convert.ToDouble(dgvFrecuencia.Rows[i].Cells["frecuenciaEsperada"].Value);
-                    sumaObservada += Convert.ToInt32(dgvFrecuencia.Rows[i].Cells["frecuenciaObservada"].Value);
-                    hasta = dgvFrecuencia.Rows[i].Cells["hasta"].Value.ToString();
-                }
 
-                float c = (float)Math.Pow(((float)sumaEsperada - (float)sumaObservada), 2) / sumaEsperada;
-                cAcum += c;
-                dgvChi.Rows.Add(desde, hasta, sumaObservada, sumaEsperada, Math.Truncate(10000 * c) / 10000, Math.Truncate(10000 * cAcum) / 10000);
-                intervalos[j, 0] = desde;
-                intervalos[j, 1] = hasta;
-                intervalos[j, 2] = sumaObservada.ToString();
-                intervalos[j, 3] = sumaEsperada.ToString();
-                j++;
-            }
 
-            return intervalos;
+        
 
-        }
-        public bool verificarProximos(int i)
-        {
-            int suma = 0;
-            for (int j = i + 1; j < dgvFrecuencia.Rows.Count; j++)
-            {
-                suma += Convert.ToInt32(dgvFrecuencia.Rows[j].Cells["frecuenciaEsperada"].Value);
-                if (suma >= 5)
-                {
-                    break;
-                }
-
-            }
-            return suma < 5;
-        }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -296,15 +318,6 @@ namespace TP03SIMULACION.DistrUniforme
         {
 
         }
-        public void conclusion()
-        {
-            string txt;
-            if (getAcumulado() < tablaChiCuadrado())
-                txt = "Conclusión: La hipótesis se acepta, los datos se aproximan a una distribución uniforme.";
-            else
-                txt = "Conclusión: La hipótesis no se acepta, los datos no se aproximan a una distribución uniforme.";
 
-            lblConclusion.Text = txt;
-        }
     }
 }

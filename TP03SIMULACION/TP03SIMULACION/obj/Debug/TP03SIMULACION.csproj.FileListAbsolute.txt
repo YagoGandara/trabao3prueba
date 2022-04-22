@@ -43,3 +43,10 @@ C:\Users\yago\Documents\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\bin\D
 C:\Users\yago\Documents\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\bin\Debug\MathNet.Numerics.xml
 C:\Users\yago\Documents\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\bin\Debug\System.ValueTuple.xml
 C:\Users\yago\Documents\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.csproj.CopyComplete
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\bin\Debug\MathNet.Numerics.dll
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\bin\Debug\System.ValueTuple.dll
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\bin\Debug\MathNet.Numerics.xml
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\bin\Debug\System.ValueTuple.xml
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.csproj.CopyComplete
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.FormNMuller.resources
+C:\Users\alejo\OneDrive\Documentos\GitHub\trabao3prueba\TP03SIMULACION\TP03SIMULACION\obj\Debug\TP03SIMULACION.FormGraficoJiCuadradoNORMALMULLER.resources

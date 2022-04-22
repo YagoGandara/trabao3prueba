@@ -40,13 +40,19 @@ namespace TP03SIMULACION
             this.txtLambda = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtSiguienteExpo = new System.Windows.Forms.Button();
+            this.btnSiguienteExpo = new System.Windows.Forms.Button();
+            this.cxNormalMuller = new System.Windows.Forms.CheckBox();
+            this.txtDesvEstandar = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnSiguienteNormalMuller = new System.Windows.Forms.Button();
+            this.txtMediaMuller = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtB
             // 
             this.txtB.Location = new System.Drawing.Point(148, 180);
-            this.txtB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtB.Margin = new System.Windows.Forms.Padding(2);
             this.txtB.Name = "txtB";
             this.txtB.Size = new System.Drawing.Size(53, 20);
             this.txtB.TabIndex = 0;
@@ -54,7 +60,7 @@ namespace TP03SIMULACION
             // txtA
             // 
             this.txtA.Location = new System.Drawing.Point(148, 149);
-            this.txtA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtA.Margin = new System.Windows.Forms.Padding(2);
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(53, 20);
             this.txtA.TabIndex = 1;
@@ -63,12 +69,13 @@ namespace TP03SIMULACION
             // 
             this.cxDistribuUnifor.AutoSize = true;
             this.cxDistribuUnifor.Location = new System.Drawing.Point(130, 117);
-            this.cxDistribuUnifor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cxDistribuUnifor.Margin = new System.Windows.Forms.Padding(2);
             this.cxDistribuUnifor.Name = "cxDistribuUnifor";
             this.cxDistribuUnifor.Size = new System.Drawing.Size(68, 17);
             this.cxDistribuUnifor.TabIndex = 2;
             this.cxDistribuUnifor.Text = "Uniforme";
             this.cxDistribuUnifor.UseVisualStyleBackColor = true;
+            this.cxDistribuUnifor.CheckedChanged += new System.EventHandler(this.cxDistribuUnifor_CheckedChanged);
             // 
             // label1
             // 
@@ -93,7 +100,7 @@ namespace TP03SIMULACION
             // btnUniformess
             // 
             this.btnUniformess.Location = new System.Drawing.Point(126, 215);
-            this.btnUniformess.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUniformess.Margin = new System.Windows.Forms.Padding(2);
             this.btnUniformess.Name = "btnUniformess";
             this.btnUniformess.Size = new System.Drawing.Size(75, 23);
             this.btnUniformess.TabIndex = 5;
@@ -144,23 +151,82 @@ namespace TP03SIMULACION
             this.label4.TabIndex = 10;
             this.label4.Text = "Lambda:";
             // 
-            // txtSiguienteExpo
+            // btnSiguienteExpo
             // 
-            this.txtSiguienteExpo.Location = new System.Drawing.Point(349, 215);
-            this.txtSiguienteExpo.Name = "txtSiguienteExpo";
-            this.txtSiguienteExpo.Size = new System.Drawing.Size(75, 23);
-            this.txtSiguienteExpo.TabIndex = 11;
-            this.txtSiguienteExpo.Text = "Siguiente";
-            this.txtSiguienteExpo.UseVisualStyleBackColor = true;
-            this.txtSiguienteExpo.Click += new System.EventHandler(this.txtSiguienteExpo_Click);
+            this.btnSiguienteExpo.Location = new System.Drawing.Point(349, 215);
+            this.btnSiguienteExpo.Name = "btnSiguienteExpo";
+            this.btnSiguienteExpo.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguienteExpo.TabIndex = 11;
+            this.btnSiguienteExpo.Text = "Siguiente";
+            this.btnSiguienteExpo.UseVisualStyleBackColor = true;
+            this.btnSiguienteExpo.Click += new System.EventHandler(this.txtSiguienteExpo_Click);
+            // 
+            // cxNormalMuller
+            // 
+            this.cxNormalMuller.AutoSize = true;
+            this.cxNormalMuller.Location = new System.Drawing.Point(567, 117);
+            this.cxNormalMuller.Name = "cxNormalMuller";
+            this.cxNormalMuller.Size = new System.Drawing.Size(90, 17);
+            this.cxNormalMuller.TabIndex = 12;
+            this.cxNormalMuller.Text = "Normal Muller";
+            this.cxNormalMuller.UseVisualStyleBackColor = true;
+            this.cxNormalMuller.CheckedChanged += new System.EventHandler(this.cxNormalMuller_CheckedChanged);
+            // 
+            // txtDesvEstandar
+            // 
+            this.txtDesvEstandar.Location = new System.Drawing.Point(650, 144);
+            this.txtDesvEstandar.Name = "txtDesvEstandar";
+            this.txtDesvEstandar.Size = new System.Drawing.Size(64, 20);
+            this.txtDesvEstandar.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(564, 147);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Desv Estandar:";
+            // 
+            // btnSiguienteNormalMuller
+            // 
+            this.btnSiguienteNormalMuller.Location = new System.Drawing.Point(567, 215);
+            this.btnSiguienteNormalMuller.Name = "btnSiguienteNormalMuller";
+            this.btnSiguienteNormalMuller.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguienteNormalMuller.TabIndex = 15;
+            this.btnSiguienteNormalMuller.Text = "Siguiente";
+            this.btnSiguienteNormalMuller.UseVisualStyleBackColor = true;
+            this.btnSiguienteNormalMuller.Click += new System.EventHandler(this.btnSiguienteNormalMuller_Click);
+            // 
+            // txtMediaMuller
+            // 
+            this.txtMediaMuller.Location = new System.Drawing.Point(650, 180);
+            this.txtMediaMuller.Name = "txtMediaMuller";
+            this.txtMediaMuller.Size = new System.Drawing.Size(64, 20);
+            this.txtMediaMuller.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(564, 184);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Media:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PowderBlue;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.txtSiguienteExpo);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(809, 340);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtMediaMuller);
+            this.Controls.Add(this.txtDesvEstandar);
+            this.Controls.Add(this.cxNormalMuller);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnSiguienteNormalMuller);
+            this.Controls.Add(this.btnSiguienteExpo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtLambda);
@@ -172,7 +238,7 @@ namespace TP03SIMULACION
             this.Controls.Add(this.cxDistribuUnifor);
             this.Controls.Add(this.txtA);
             this.Controls.Add(this.txtB);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -194,7 +260,13 @@ namespace TP03SIMULACION
         private System.Windows.Forms.TextBox txtLambda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button txtSiguienteExpo;
+        private System.Windows.Forms.Button btnSiguienteExpo;
+        private System.Windows.Forms.CheckBox cxNormalMuller;
+        private System.Windows.Forms.TextBox txtDesvEstandar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnSiguienteNormalMuller;
+        private System.Windows.Forms.TextBox txtMediaMuller;
+        private System.Windows.Forms.Label label6;
     }
 }
 

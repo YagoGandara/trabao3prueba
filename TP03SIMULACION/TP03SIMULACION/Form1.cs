@@ -45,5 +45,26 @@ namespace TP03SIMULACION
             txtA.Enabled = txtB.Enabled = false;
 
         }
+
+        private void cxDistribuUnifor_CheckedChanged(object sender, EventArgs e)
+        {
+            txtLambda.Enabled = txtMedia.Enabled = false;
+            txtA.Enabled = txtB.Enabled = true;
+            btnUniformess.Enabled = true;
+
+        }
+
+        private void cxNormalMuller_CheckedChanged(object sender, EventArgs e)
+        {
+            txtDesvEstandar.Enabled = txtMediaMuller.Enabled = true;
+            txtA.Enabled = txtLambda.Enabled = txtB.Enabled = txtMedia.Enabled = false;
+            btnUniformess.Enabled = false;
+        }
+
+        private void btnSiguienteNormalMuller_Click(object sender, EventArgs e)
+        {
+            FormNMuller formNNMuller = new FormNMuller(Convert.ToDouble(txtDesvEstandar.Text), Convert.ToDouble(txtMediaMuller.Text));
+            formNNMuller.Show();
+        }
     }
 }
