@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using MathNet.Numerics.Distributions;
+
 
 namespace TP03SIMULACION
 {
@@ -37,8 +39,7 @@ namespace TP03SIMULACION
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             dgvExponencialF.Rows.Clear();
-            //dgvChiCuadrado.Rows.Clear();
-            //chrtDistribucion.Visible = true;
+            dgvChi.Rows.Clear();
 
             double[,] intervalos = calcularIntervalos();
             double[] frecuenciaObservada = calcularFrecuenciaObservada(intervalos);
@@ -52,6 +53,14 @@ namespace TP03SIMULACION
                 dgvExponencialF.Rows.Add(Math.Truncate(10000 * intervalos[i, 0]) / 10000, Math.Truncate(10000 * intervalos[i, 1]) / 10000, marcaClase, frecuenciaObservada[i], probabilidad, calcularFrecuenciaEsperada(probabilidad, numeros.Length));
             }
             generarGrafico(intervalos , frecuenciaObservada);
+            string[,] intervalosChi = chiCuadrado();
+            lblCalculadoRes.Text = getAcumulado().ToString();
+            lblCalculadoRes.Visible = true;
+            lblTablaRes.Text = tablaChiCuadrado().ToString();
+            lblTablaRes.Visible = true;
+            conclusion();
+
+
 
 
         }
@@ -147,6 +156,81 @@ namespace TP03SIMULACION
                 chDistribucion.Series["Series2"].Points.AddXY(d.Key, d.Value);
             }
 
+        }
+
+        public string[,] chiCuadrado()
+        {
+            float cAcum = 0;
+            String[,] intervalos = new String[dgvExponencialF.Rows.Count, 4];
+            int j = 0;
+            for (int i = 0; i < dgvExponencialF.Rows.Count; i++)
+            {
+                string desde = dgvExponencialF.Rows[i].Cells["desde"].Value.ToString();
+                string hasta = dgvExponencialF.Rows[i].Cells["hasta"].Value.ToString();
+                float sumaEsperada = (float)Convert.ToDouble(dgvExponencialF.Rows[i].Cells["frecuenciaEsperada"].Value);
+                int sumaObservada = Convert.ToInt32(dgvExponencialF.Rows[i].Cells["frecuenciaObservada"].Value);
+
+                while (sumaEsperada < 5 || verificarProximos(i))
+                {
+                    if (i == dgvExponencialF.Rows.Count - 1)
+                        break;
+                    i++;
+                    sumaEsperada += (float)Convert.ToDouble(dgvExponencialF.Rows[i].Cells["frecuenciaEsperada"].Value);
+                    sumaObservada += Convert.ToInt32(dgvExponencialF.Rows[i].Cells["frecuenciaObservada"].Value);
+                    hasta = dgvExponencialF.Rows[i].Cells["hasta"].Value.ToString();
+
+                }
+                float c = (float)Math.Pow(((float)sumaEsperada - (float)sumaObservada), 2) / sumaEsperada;
+                cAcum += c;
+                dgvChi.Rows.Add(desde, hasta, sumaObservada, sumaEsperada, Math.Truncate(10000 * c) / 10000, Math.Truncate(10000 * cAcum) / 10000);
+                intervalos[j, 0] = desde;
+                intervalos[j, 1] = hasta;
+                intervalos[j, 2] = sumaObservada.ToString();
+                intervalos[j, 3] = sumaEsperada.ToString();
+                j++;
+            }
+
+            return intervalos;
+
+        }
+
+        public bool verificarProximos(int i)
+        {
+            int suma = 0;
+            for (int j = i + 1; j < dgvExponencialF.Rows.Count; j++)
+            {
+                suma += Convert.ToInt32(dgvExponencialF.Rows[j].Cells["frecuenciaEsperada"].Value);
+                if (suma >= 5)
+                    break;
+            }
+            return suma < 5;
+        }
+
+        public float getAcumulado()
+        {
+            return (float)Convert.ToDouble(dgvChi.Rows[dgvChi.Rows.Count - 1].Cells["cAcumulativo"].Value);
+        }
+
+
+        public float tablaChiCuadrado()
+        {
+            int gradosLibertad = dgvChi.Rows.Count - 1 - 2;
+            if (gradosLibertad < 1) gradosLibertad = 1;
+            return (float)Math.Round(ChiSquared.InvCDF(gradosLibertad, 0.95), 4);
+        }
+
+        
+
+        public void conclusion()
+        {
+            string txt;
+            if (getAcumulado() < tablaChiCuadrado())
+                txt = "Conclusión: La hipótesis se acepta, los datos se aproximan a una distribución exponencial negativa.";
+            else
+                txt = "Conclusión: La hipótesis no se acepta, los datos no se aproximan a una distribución exponencial negativa.";
+
+            lblConclusion.Text = txt;
+            lblConclusion.Visible = true;
         }
 
 

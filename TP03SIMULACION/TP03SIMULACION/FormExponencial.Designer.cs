@@ -30,17 +30,18 @@ namespace TP03SIMULACION
         private void InitializeComponent()
         {
             this.dgvExpo = new System.Windows.Forms.DataGridView();
-            this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.x = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtGenerar = new System.Windows.Forms.Button();
             this.txtN = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.x = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvExpo
             // 
+            this.dgvExpo.AllowUserToAddRows = false;
             this.dgvExpo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExpo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.i,
@@ -49,16 +50,6 @@ namespace TP03SIMULACION
             this.dgvExpo.Name = "dgvExpo";
             this.dgvExpo.Size = new System.Drawing.Size(243, 346);
             this.dgvExpo.TabIndex = 0;
-            // 
-            // i
-            // 
-            this.i.HeaderText = "i";
-            this.i.Name = "i";
-            // 
-            // x
-            // 
-            this.x.HeaderText = "x";
-            this.x.Name = "x";
             // 
             // txtGenerar
             // 
@@ -96,6 +87,16 @@ namespace TP03SIMULACION
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // i
+            // 
+            this.i.HeaderText = "i(iteración)";
+            this.i.Name = "i";
+            // 
+            // x
+            // 
+            this.x.HeaderText = "x(aleatorio)";
+            this.x.Name = "x";
+            // 
             // FormExponencial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,6 +108,7 @@ namespace TP03SIMULACION
             this.Controls.Add(this.txtGenerar);
             this.Controls.Add(this.dgvExpo);
             this.Name = "FormExponencial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormExponencial";
             this.Load += new System.EventHandler(this.FormExponencial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpo)).EndInit();
@@ -118,11 +120,11 @@ namespace TP03SIMULACION
         #endregion
 
         private System.Windows.Forms.DataGridView dgvExpo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn i;
-        private System.Windows.Forms.DataGridViewTextBoxColumn x;
         private System.Windows.Forms.Button txtGenerar;
         private System.Windows.Forms.TextBox txtN;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn i;
+        private System.Windows.Forms.DataGridViewTextBoxColumn x;
     }
 }
