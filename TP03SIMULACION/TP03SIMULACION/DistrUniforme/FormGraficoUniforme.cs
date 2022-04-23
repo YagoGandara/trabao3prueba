@@ -36,7 +36,6 @@ namespace TP03SIMULACION.DistrUniforme
             this.numB = numB;
             this.num = num;
             chrtUniforme.Series.Add(Series1);
-            chrtChi.Series.Add(Series2);
 
 
 
@@ -193,11 +192,11 @@ namespace TP03SIMULACION.DistrUniforme
             }
             generarGrafico(intervalos, frecuenciaObservada);
             String[,] intervalosChi = chiCuadrado();
-           // generarGraficoChi(intervalosChi);
-            // lblCalculado.Text = getAcumulado().ToString();
-            //lblCalculado.Visible = true;
-            //lblTabla.Text = tablaChiCuadrado().ToString();
-            //conclusion();
+           
+            lblCalculado.Text = getAcumulado().ToString();
+            lblCalculado.Visible = true;
+            lblTabla.Text = tablaChiCuadrado().ToString();
+            conclusion();
         }
 
         public string[,] chiCuadrado()
@@ -259,54 +258,36 @@ namespace TP03SIMULACION.DistrUniforme
 
         public float getAcumulado()
         {
-            return (float)Convert.ToDouble(dgvChi.Rows[dgvChi.Rows.Count - 1].Cells["Css"].Value);
+            return (float)Convert.ToDouble(dgvChi.Rows[dgvChi.Rows.Count - 1].Cells["Cacu2"].Value);
         }
 
 
 
 
 
-
-
-
-
-
-
-
-        public void generarGraficoChi(string[,] intervalos)
+        public void conclusion()
         {
-            chrtChi.Series["Series1"].Points.Clear();
-            chrtChi.Series["Series2"].Points.Clear();
-            chrtChi.Series["Series1"].LegendText = "Frecuencia observada";
-            chrtChi.Series["Series2"].LegendText = "Frecuencia esperada";
+            string txt;
+            if (getAcumulado() < tablaChiCuadrado())
+                txt = "Conclusión: La hipótesis se acepta, los datos se aproximan a una distribución uniforme.";
+            else
+                txt = "Conclusión: La hipótesis no se acepta, los datos no se aproximan a una distribución uniforme.";
 
-            Dictionary<string, double> dic3 = new Dictionary<string, double>();
-            Dictionary<string, float> dic4 = new Dictionary<string, float>();
-
-            int i = 0;
-            while (i < intervalos.GetLength(0) && !(intervalos[i, 0] == null))
-            {
-                dic3.Add(intervalos[i, 0] + " - " + intervalos[i, 1], Convert.ToInt32(intervalos[i, 2]));
-                dic4.Add(intervalos[i, 0] + " - " + intervalos[i, 1], (float)Convert.ToDouble(intervalos[i, 3]));
-                i++;
-            }
-
-            foreach (KeyValuePair<string, double> d in dic3)
-            {
-                chrtChi.Series["Series1"].Points.AddXY(d.Key, d.Value);
-            }
-
-            foreach (KeyValuePair<string, float> d in dic4)
-            {
-                chrtChi.Series["Series2"].Points.AddXY(d.Key, d.Value);
-            }
-
+            lblConclusion.Text = txt;
+            lblConclusion.Visible = true;
         }
 
 
 
 
-        
+
+
+
+
+
+
+
+
 
 
         private void label2_Click(object sender, EventArgs e)

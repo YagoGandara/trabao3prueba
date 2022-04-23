@@ -30,13 +30,13 @@ namespace TP03SIMULACION.DistrUniforme
         private void InitializeComponent()
         {
             this.dgvUniforme = new System.Windows.Forms.DataGridView();
-            this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtN = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGenerarUniforms = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUniforme)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,17 +47,58 @@ namespace TP03SIMULACION.DistrUniforme
             this.i,
             this.RND,
             this.X});
-            this.dgvUniforme.Location = new System.Drawing.Point(178, 84);
+            this.dgvUniforme.Location = new System.Drawing.Point(32, 57);
+            this.dgvUniforme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvUniforme.Name = "dgvUniforme";
             this.dgvUniforme.RowHeadersWidth = 51;
             this.dgvUniforme.RowTemplate.Height = 24;
-            this.dgvUniforme.Size = new System.Drawing.Size(429, 240);
+            this.dgvUniforme.Size = new System.Drawing.Size(430, 279);
             this.dgvUniforme.TabIndex = 0;
             this.dgvUniforme.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUniforme_CellContentClick);
             // 
+            // txtN
+            // 
+            this.txtN.Location = new System.Drawing.Point(191, 30);
+            this.txtN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtN.Name = "txtN";
+            this.txtN.Size = new System.Drawing.Size(76, 20);
+            this.txtN.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Cantidad de numeros a generar:";
+            // 
+            // btnGenerarUniforms
+            // 
+            this.btnGenerarUniforms.Location = new System.Drawing.Point(288, 27);
+            this.btnGenerarUniforms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGenerarUniforms.Name = "btnGenerarUniforms";
+            this.btnGenerarUniforms.Size = new System.Drawing.Size(66, 25);
+            this.btnGenerarUniforms.TabIndex = 3;
+            this.btnGenerarUniforms.Text = "Generar";
+            this.btnGenerarUniforms.UseVisualStyleBackColor = true;
+            this.btnGenerarUniforms.Click += new System.EventHandler(this.btnGenerarUniforms_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(481, 294);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 42);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Generar Grafico";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // i
             // 
-            this.i.HeaderText = "i";
+            this.i.HeaderText = "i(iteración)";
             this.i.MinimumWidth = 6;
             this.i.Name = "i";
             this.i.ReadOnly = true;
@@ -73,58 +114,23 @@ namespace TP03SIMULACION.DistrUniforme
             // 
             // X
             // 
-            this.X.HeaderText = "X";
+            this.X.HeaderText = "X(aleatorio)";
             this.X.MinimumWidth = 6;
             this.X.Name = "X";
             this.X.ReadOnly = true;
             this.X.Width = 125;
             // 
-            // txtN
-            // 
-            this.txtN.Location = new System.Drawing.Point(394, 41);
-            this.txtN.Name = "txtN";
-            this.txtN.Size = new System.Drawing.Size(100, 22);
-            this.txtN.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(175, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Cantidad de numeros a generar:";
-            // 
-            // btnGenerarUniforms
-            // 
-            this.btnGenerarUniforms.Location = new System.Drawing.Point(636, 300);
-            this.btnGenerarUniforms.Name = "btnGenerarUniforms";
-            this.btnGenerarUniforms.Size = new System.Drawing.Size(75, 23);
-            this.btnGenerarUniforms.TabIndex = 3;
-            this.btnGenerarUniforms.Text = "Generar";
-            this.btnGenerarUniforms.UseVisualStyleBackColor = true;
-            this.btnGenerarUniforms.Click += new System.EventHandler(this.btnGenerarUniforms_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(708, 380);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Generar Grafico";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FormUniforme
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 447);
+            this.ClientSize = new System.Drawing.Size(609, 351);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGenerarUniforms);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtN);
             this.Controls.Add(this.dgvUniforme);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormUniforme";
             this.Text = "FormUniforme";
             this.Load += new System.EventHandler(this.FormUniforme_Load);
@@ -137,12 +143,12 @@ namespace TP03SIMULACION.DistrUniforme
         #endregion
 
         private System.Windows.Forms.DataGridView dgvUniforme;
-        private System.Windows.Forms.DataGridViewTextBoxColumn i;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RND;
-        private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.TextBox txtN;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGenerarUniforms;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn i;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RND;
+        private System.Windows.Forms.DataGridViewTextBoxColumn X;
     }
 }
