@@ -45,9 +45,9 @@ namespace TP03SIMULACION
             this.dgvExpo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.i,
             this.x});
-            this.dgvExpo.Location = new System.Drawing.Point(122, 125);
+            this.dgvExpo.Location = new System.Drawing.Point(41, 59);
             this.dgvExpo.Name = "dgvExpo";
-            this.dgvExpo.Size = new System.Drawing.Size(243, 247);
+            this.dgvExpo.Size = new System.Drawing.Size(243, 346);
             this.dgvExpo.TabIndex = 0;
             // 
             // i
@@ -62,7 +62,7 @@ namespace TP03SIMULACION
             // 
             // txtGenerar
             // 
-            this.txtGenerar.Location = new System.Drawing.Point(290, 84);
+            this.txtGenerar.Location = new System.Drawing.Point(209, 16);
             this.txtGenerar.Name = "txtGenerar";
             this.txtGenerar.Size = new System.Drawing.Size(75, 23);
             this.txtGenerar.TabIndex = 1;
@@ -72,7 +72,7 @@ namespace TP03SIMULACION
             // 
             // txtN
             // 
-            this.txtN.Location = new System.Drawing.Point(223, 84);
+            this.txtN.Location = new System.Drawing.Point(122, 18);
             this.txtN.Name = "txtN";
             this.txtN.Size = new System.Drawing.Size(61, 20);
             this.txtN.TabIndex = 2;
@@ -80,7 +80,7 @@ namespace TP03SIMULACION
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 89);
+            this.label1.Location = new System.Drawing.Point(40, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 3;
@@ -88,7 +88,7 @@ namespace TP03SIMULACION
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(383, 326);
+            this.button1.Location = new System.Drawing.Point(304, 359);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 46);
             this.button1.TabIndex = 4;
@@ -100,7 +100,7 @@ namespace TP03SIMULACION
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 452);
+            this.ClientSize = new System.Drawing.Size(408, 421);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtN);

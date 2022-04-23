@@ -90,5 +90,13 @@ namespace TP03SIMULACION
 
 
         }
+
+        private void txtLambda_Leave(object sender, EventArgs e)
+        {
+            if(txtMedia.Text == string.Empty)
+            {
+                txtMedia.Text = (1.0 / Convert.ToDouble(txtLambda.Text)).ToString();
+            }
+        }
     }
 }

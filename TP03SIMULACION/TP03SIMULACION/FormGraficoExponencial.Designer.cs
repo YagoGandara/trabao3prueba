@@ -29,6 +29,9 @@ namespace TP03SIMULACION
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.txtCantIntervalos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvExponencialF = new System.Windows.Forms.DataGridView();
@@ -39,7 +42,9 @@ namespace TP03SIMULACION
             this.probabilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.frecuenciaEsperada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGenerar = new System.Windows.Forms.Button();
+            this.chDistribucion = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExponencialF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chDistribucion)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCantIntervalos
@@ -60,6 +65,7 @@ namespace TP03SIMULACION
             // 
             // dgvExponencialF
             // 
+            this.dgvExponencialF.AllowUserToAddRows = false;
             this.dgvExponencialF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExponencialF.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.desde,
@@ -113,11 +119,28 @@ namespace TP03SIMULACION
             this.btnGenerar.UseVisualStyleBackColor = true;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
+            // chDistribucion
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chDistribucion.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chDistribucion.Legends.Add(legend2);
+            this.chDistribucion.Location = new System.Drawing.Point(40, 298);
+            this.chDistribucion.Name = "chDistribucion";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chDistribucion.Series.Add(series2);
+            this.chDistribucion.Size = new System.Drawing.Size(557, 336);
+            this.chDistribucion.TabIndex = 4;
+            this.chDistribucion.Text = "chart1";
+            // 
             // FormGraficoExponencial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(966, 749);
+            this.Controls.Add(this.chDistribucion);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.dgvExponencialF);
             this.Controls.Add(this.label1);
@@ -126,6 +149,7 @@ namespace TP03SIMULACION
             this.Text = "FormGraficoExponencial";
             this.Load += new System.EventHandler(this.FormGraficoExponencial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExponencialF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chDistribucion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +167,6 @@ namespace TP03SIMULACION
         private System.Windows.Forms.DataGridViewTextBoxColumn probabilidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn frecuenciaEsperada;
         private System.Windows.Forms.Button btnGenerar;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chDistribucion;
     }
 }

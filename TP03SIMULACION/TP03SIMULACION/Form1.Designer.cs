@@ -133,6 +133,7 @@ namespace TP03SIMULACION
             this.txtLambda.Name = "txtLambda";
             this.txtLambda.Size = new System.Drawing.Size(63, 20);
             this.txtLambda.TabIndex = 8;
+            this.txtLambda.Leave += new System.EventHandler(this.txtLambda_Leave);
             // 
             // label3
             // 
