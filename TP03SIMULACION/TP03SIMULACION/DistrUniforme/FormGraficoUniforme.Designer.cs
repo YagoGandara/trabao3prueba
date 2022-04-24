@@ -36,8 +36,20 @@ namespace TP03SIMULACION.DistrUniforme
             this.btnVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvChi = new System.Windows.Forms.DataGridView();
+            this.Desde2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hasta2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FrecuenciaObservada2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FrecuenciaEsperada2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cacu2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCantIntervalos = new System.Windows.Forms.TextBox();
             this.dgvFrecuencia = new System.Windows.Forms.DataGridView();
+            this.desde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.frecuenciaObservada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.probabilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.frecuenciaEsperada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Generar2 = new System.Windows.Forms.Button();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lblCalculado = new System.Windows.Forms.Label();
@@ -45,21 +57,21 @@ namespace TP03SIMULACION.DistrUniforme
             this.lblTabla = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblConclusion = new System.Windows.Forms.Label();
-            this.desde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaClase = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.frecuenciaObservada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.probabilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.frecuenciaEsperada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Desde2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hasta2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FrecuenciaObservada2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FrecuenciaEsperada2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cacu2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvKs = new System.Windows.Forms.DataGridView();
+            this.desde1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hasta1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.po = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poacu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peacu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.absPoacuPeacu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.max = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.chrtUniforme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFrecuencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKs)).BeginInit();
             this.SuspendLayout();
             // 
             // chrtUniforme
@@ -120,6 +132,48 @@ namespace TP03SIMULACION.DistrUniforme
             this.dgvChi.Size = new System.Drawing.Size(655, 206);
             this.dgvChi.TabIndex = 9;
             // 
+            // Desde2
+            // 
+            this.Desde2.HeaderText = "Desde";
+            this.Desde2.MinimumWidth = 6;
+            this.Desde2.Name = "Desde2";
+            this.Desde2.ReadOnly = true;
+            // 
+            // Hasta2
+            // 
+            this.Hasta2.HeaderText = "Hasta";
+            this.Hasta2.MinimumWidth = 6;
+            this.Hasta2.Name = "Hasta2";
+            this.Hasta2.ReadOnly = true;
+            // 
+            // FrecuenciaObservada2
+            // 
+            this.FrecuenciaObservada2.HeaderText = "Frecuencia Observada";
+            this.FrecuenciaObservada2.MinimumWidth = 6;
+            this.FrecuenciaObservada2.Name = "FrecuenciaObservada2";
+            this.FrecuenciaObservada2.ReadOnly = true;
+            // 
+            // FrecuenciaEsperada2
+            // 
+            this.FrecuenciaEsperada2.HeaderText = "Frecuencia Esperada";
+            this.FrecuenciaEsperada2.MinimumWidth = 6;
+            this.FrecuenciaEsperada2.Name = "FrecuenciaEsperada2";
+            this.FrecuenciaEsperada2.ReadOnly = true;
+            // 
+            // C2
+            // 
+            this.C2.HeaderText = "C()";
+            this.C2.MinimumWidth = 6;
+            this.C2.Name = "C2";
+            this.C2.ReadOnly = true;
+            // 
+            // Cacu2
+            // 
+            this.Cacu2.HeaderText = "C(acu)";
+            this.Cacu2.MinimumWidth = 6;
+            this.Cacu2.Name = "Cacu2";
+            this.Cacu2.ReadOnly = true;
+            // 
             // txtCantIntervalos
             // 
             this.txtCantIntervalos.Location = new System.Drawing.Point(246, 20);
@@ -148,6 +202,42 @@ namespace TP03SIMULACION.DistrUniforme
             this.dgvFrecuencia.Size = new System.Drawing.Size(654, 209);
             this.dgvFrecuencia.TabIndex = 12;
             this.dgvFrecuencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFrecuencia_CellContentClick);
+            // 
+            // desde
+            // 
+            this.desde.HeaderText = "Desde";
+            this.desde.MinimumWidth = 6;
+            this.desde.Name = "desde";
+            // 
+            // hasta
+            // 
+            this.hasta.HeaderText = "Hasta";
+            this.hasta.MinimumWidth = 6;
+            this.hasta.Name = "hasta";
+            // 
+            // marcaClase
+            // 
+            this.marcaClase.HeaderText = "Marca De Clase";
+            this.marcaClase.MinimumWidth = 6;
+            this.marcaClase.Name = "marcaClase";
+            // 
+            // frecuenciaObservada
+            // 
+            this.frecuenciaObservada.HeaderText = "Frecuencia Observada";
+            this.frecuenciaObservada.MinimumWidth = 6;
+            this.frecuenciaObservada.Name = "frecuenciaObservada";
+            // 
+            // probabilidad
+            // 
+            this.probabilidad.HeaderText = "Probabilidad";
+            this.probabilidad.MinimumWidth = 6;
+            this.probabilidad.Name = "probabilidad";
+            // 
+            // frecuenciaEsperada
+            // 
+            this.frecuenciaEsperada.HeaderText = "Frecuencia Esperada";
+            this.frecuenciaEsperada.MinimumWidth = 6;
+            this.frecuenciaEsperada.Name = "frecuenciaEsperada";
             // 
             // Generar2
             // 
@@ -219,90 +309,93 @@ namespace TP03SIMULACION.DistrUniforme
             this.lblConclusion.Size = new System.Drawing.Size(0, 13);
             this.lblConclusion.TabIndex = 19;
             // 
-            // desde
+            // dgvKs
             // 
-            this.desde.HeaderText = "Desde";
-            this.desde.MinimumWidth = 6;
-            this.desde.Name = "desde";
+            this.dgvKs.AllowUserToAddRows = false;
+            this.dgvKs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.desde1,
+            this.hasta1,
+            this.fo,
+            this.fe,
+            this.po,
+            this.pe,
+            this.poacu,
+            this.peacu,
+            this.absPoacuPeacu,
+            this.max});
+            this.dgvKs.Location = new System.Drawing.Point(650, 400);
+            this.dgvKs.Name = "dgvKs";
+            this.dgvKs.Size = new System.Drawing.Size(685, 265);
+            this.dgvKs.TabIndex = 20;
             // 
-            // hasta
+            // desde1
             // 
-            this.hasta.HeaderText = "Hasta";
-            this.hasta.MinimumWidth = 6;
-            this.hasta.Name = "hasta";
+            this.desde1.HeaderText = "Desde";
+            this.desde1.Name = "desde1";
+            this.desde1.Width = 60;
             // 
-            // marcaClase
+            // hasta1
             // 
-            this.marcaClase.HeaderText = "Marca De Clase";
-            this.marcaClase.MinimumWidth = 6;
-            this.marcaClase.Name = "marcaClase";
+            this.hasta1.HeaderText = "Hasta";
+            this.hasta1.Name = "hasta1";
+            this.hasta1.Width = 60;
             // 
-            // frecuenciaObservada
+            // fo
             // 
-            this.frecuenciaObservada.HeaderText = "Frecuencia Observada";
-            this.frecuenciaObservada.MinimumWidth = 6;
-            this.frecuenciaObservada.Name = "frecuenciaObservada";
+            this.fo.HeaderText = "Frecuencia Observada";
+            this.fo.Name = "fo";
+            this.fo.Width = 60;
             // 
-            // probabilidad
+            // fe
             // 
-            this.probabilidad.HeaderText = "Probabilidad";
-            this.probabilidad.MinimumWidth = 6;
-            this.probabilidad.Name = "probabilidad";
+            this.fe.HeaderText = "Frecuencia Esperada";
+            this.fe.Name = "fe";
+            this.fe.Width = 60;
             // 
-            // frecuenciaEsperada
+            // po
             // 
-            this.frecuenciaEsperada.HeaderText = "Frecuencia Esperada";
-            this.frecuenciaEsperada.MinimumWidth = 6;
-            this.frecuenciaEsperada.Name = "frecuenciaEsperada";
+            this.po.HeaderText = "Po";
+            this.po.Name = "po";
+            this.po.Width = 60;
             // 
-            // Desde2
+            // pe
             // 
-            this.Desde2.HeaderText = "Desde";
-            this.Desde2.MinimumWidth = 6;
-            this.Desde2.Name = "Desde2";
-            this.Desde2.ReadOnly = true;
+            this.pe.HeaderText = "Pe";
+            this.pe.Name = "pe";
+            this.pe.Width = 60;
             // 
-            // Hasta2
+            // poacu
             // 
-            this.Hasta2.HeaderText = "Hasta";
-            this.Hasta2.MinimumWidth = 6;
-            this.Hasta2.Name = "Hasta2";
-            this.Hasta2.ReadOnly = true;
+            this.poacu.HeaderText = "Po(acu)";
+            this.poacu.Name = "poacu";
+            this.poacu.Width = 60;
             // 
-            // FrecuenciaObservada2
+            // peacu
             // 
-            this.FrecuenciaObservada2.HeaderText = "Frecuencia Observada";
-            this.FrecuenciaObservada2.MinimumWidth = 6;
-            this.FrecuenciaObservada2.Name = "FrecuenciaObservada2";
-            this.FrecuenciaObservada2.ReadOnly = true;
+            this.peacu.HeaderText = "Pe(acu)";
+            this.peacu.Name = "peacu";
+            this.peacu.Width = 60;
             // 
-            // FrecuenciaEsperada2
+            // absPoacuPeacu
             // 
-            this.FrecuenciaEsperada2.HeaderText = "Frecuencia Esperada";
-            this.FrecuenciaEsperada2.MinimumWidth = 6;
-            this.FrecuenciaEsperada2.Name = "FrecuenciaEsperada2";
-            this.FrecuenciaEsperada2.ReadOnly = true;
+            this.absPoacuPeacu.HeaderText = "l Po(Acu) - Pe(Acu) l";
+            this.absPoacuPeacu.Name = "absPoacuPeacu";
+            this.absPoacuPeacu.Width = 80;
             // 
-            // C2
+            // max
             // 
-            this.C2.HeaderText = "C()";
-            this.C2.MinimumWidth = 6;
-            this.C2.Name = "C2";
-            this.C2.ReadOnly = true;
-            // 
-            // Cacu2
-            // 
-            this.Cacu2.HeaderText = "C(acu)";
-            this.Cacu2.MinimumWidth = 6;
-            this.Cacu2.Name = "Cacu2";
-            this.Cacu2.ReadOnly = true;
+            this.max.HeaderText = "Max l Po - Pe l ";
+            this.max.Name = "max";
+            this.max.Width = 80;
             // 
             // FormGraficoUniforme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1370, 609);
+            this.ClientSize = new System.Drawing.Size(1370, 743);
+            this.Controls.Add(this.dgvKs);
             this.Controls.Add(this.lblConclusion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTabla);
@@ -323,6 +416,7 @@ namespace TP03SIMULACION.DistrUniforme
             ((System.ComponentModel.ISupportInitialize)(this.chrtUniforme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFrecuencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,5 +449,16 @@ namespace TP03SIMULACION.DistrUniforme
         private System.Windows.Forms.DataGridViewTextBoxColumn frecuenciaObservada;
         private System.Windows.Forms.DataGridViewTextBoxColumn probabilidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn frecuenciaEsperada;
+        private System.Windows.Forms.DataGridView dgvKs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desde1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hasta1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn po;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poacu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peacu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn absPoacuPeacu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn max;
     }
 }
