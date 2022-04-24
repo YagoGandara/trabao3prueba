@@ -197,6 +197,7 @@ namespace TP03SIMULACION.DistrUniforme
             lblCalculado.Visible = true;
             lblTabla.Text = tablaChiCuadrado().ToString();
             conclusion();
+            String[,] intervaKs = Ks();
         }
 
         public string[,] chiCuadrado()
@@ -278,6 +279,45 @@ namespace TP03SIMULACION.DistrUniforme
         }
 
 
+
+        public string[,] Ks()
+        {
+            float cAcum = 0;
+            String[,] intervalos = new String[dgvFrecuencia.Rows.Count, 4];
+            int j = 0;
+            for (int i = 0; i < dgvFrecuencia.Rows.Count; i++)
+            {
+                string desde = dgvFrecuencia.Rows[i].Cells["desde"].Value.ToString();
+                string hasta = dgvFrecuencia.Rows[i].Cells["hasta"].Value.ToString();
+                float frecuenciaEsperada = (float)Convert.ToDouble(dgvFrecuencia.Rows[i].Cells["frecuenciaEsperada"].Value);
+                int frecuenciaObservada = Convert.ToInt32(dgvFrecuencia.Rows[i].Cells["frecuenciaObservada"].Value);
+                double pe = (double)Convert.ToDouble(dgvFrecuencia.Rows[i].Cells["probabilidad"].Value);
+
+                /*
+                while (sumaEsperada < 5 || verificarProximos(i))
+                {
+                    if (i == dgvFrecuencia.Rows.Count - 1)
+                        break;
+                    i++;
+                    sumaEsperada += (float)Convert.ToDouble(dgvFrecuencia.Rows[i].Cells["frecuenciaEsperada"].Value);
+                    sumaObservada += Convert.ToInt32(dgvFrecuencia.Rows[i].Cells["frecuenciaObservada"].Value);
+                    hasta = dgvFrecuencia.Rows[i].Cells["hasta"].Value.ToString();
+
+                }
+                float c = (float)Math.Pow(((float)sumaEsperada - (float)sumaObservada), 2) / sumaEsperada;
+                cAcum += c;
+                */
+                dgvKs.Rows.Add(desde, hasta, frecuenciaEsperada, frecuenciaObservada, 0 , pe ,0 , 0 , 0 ,0);
+                intervalos[j, 0] = desde;
+                intervalos[j, 1] = hasta;
+                intervalos[j, 2] = frecuenciaEsperada.ToString();
+                intervalos[j, 3] = frecuenciaObservada.ToString();
+                j++;
+            }
+
+            return intervalos;
+
+        }
 
 
 
