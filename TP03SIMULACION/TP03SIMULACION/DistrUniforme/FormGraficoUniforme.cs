@@ -199,6 +199,7 @@ namespace TP03SIMULACION.DistrUniforme
             lblTabla.Text = tablaChiCuadrado().ToString();
             conclusion();
             String[,] intervaKs = Ks();
+            evaluarPruebaKS();
         }
 
         public string[,] chiCuadrado()
@@ -319,6 +320,45 @@ namespace TP03SIMULACION.DistrUniforme
 
         }
 
+        private void evaluarPruebaKS()
+        {
+            // para saber si acepta o rechaza la prueba
+            double mayor = 0;
+            lblTab.Text = "";
+            lblCal.Text = "";
+            lblConcl.Text = "";
+
+
+            for (int i = 0; i < dgvKs.Rows.Count; i++)
+            {
+                //string desde = dgvFrecuencia.Rows[i].Cells["desde"].Value.ToString();
+                double valor_ac = (double)Convert.ToDouble(dgvKs.Rows[i].Cells["absPoacuPeacu"].Value);
+                if (valor_ac > mayor)
+                {
+                    mayor = valor_ac;
+                }
+
+            }
+
+            // tomando nivel de confianza 0.95 y muestra tamaÃ±o = n
+            double valor = 1.36 / Math.Sqrt(num.Length);
+
+            lblCal.Text += " " + mayor;
+            lblTab.Text += " " + valor;
+            lblCal.Visible = true;
+            lblTab.Visible = true;
+
+            if (valor > mayor)
+            {
+                lblConcl.Text += "Como el valor calculado es menor a la tabla se acepta la hipotesis.";
+            }
+            else
+            {
+                lblConcl.Text += " Como el valor calculado es mayor SE RECHAZA la hipotesis.";
+            }
+            lblConcl.Visible = true;
+        }
+
 
 
 
@@ -340,5 +380,9 @@ namespace TP03SIMULACION.DistrUniforme
 
         }
 
+        private void dgvChi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
