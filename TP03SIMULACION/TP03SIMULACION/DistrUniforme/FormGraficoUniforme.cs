@@ -308,7 +308,7 @@ namespace TP03SIMULACION.DistrUniforme
 
                 //falta la ultima columna del KS , la de MAax
 
-                dgvKs.Rows.Add(desde, hasta, frecuenciaEsperada, frecuenciaObservada, (float) (frecuenciaObservada / (float) num.Length) , Math.Round(pe ,4 ) , poAcu , peAcu , restaAbsoluta, max);
+                dgvKs.Rows.Add(desde, hasta, frecuenciaEsperada, frecuenciaObservada, (float) (frecuenciaObservada / (float) num.Length) , Math.Round(pe ,4 ) , Math.Round(poAcu,4) , Math.Round(peAcu,4) , Math.Round(restaAbsoluta,4));
                 intervalos[j, 0] = desde;
                 intervalos[j, 1] = hasta;
                 intervalos[j, 2] = frecuenciaEsperada.ToString();
