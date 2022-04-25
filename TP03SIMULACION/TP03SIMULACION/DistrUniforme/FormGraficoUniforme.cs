@@ -177,6 +177,7 @@ namespace TP03SIMULACION.DistrUniforme
         {
             dgvFrecuencia.Rows.Clear();
             dgvChi.Rows.Clear();
+            dgvKs.Rows.Clear();
 
 
             double[,] intervalos = calcularIntervalos();
@@ -303,10 +304,10 @@ namespace TP03SIMULACION.DistrUniforme
                 peAcu += pe;
                 restaAbsoluta = Math.Abs(poAcu - peAcu);
                 max = restaAbsoluta;
- 
+
                 //falta la ultima columna del KS , la de MAax
 
-                dgvKs.Rows.Add(desde, hasta, frecuenciaEsperada, frecuenciaObservada, (float) (frecuenciaObservada / (float) num.Length) , Math.Round(pe ,4 ) , poAcu , peAcu , restaAbsoluta, 0);
+                dgvKs.Rows.Add(desde, hasta, frecuenciaEsperada, frecuenciaObservada, (float) (frecuenciaObservada / (float) num.Length) , Math.Round(pe ,4 ) , poAcu , peAcu , restaAbsoluta, max);
                 intervalos[j, 0] = desde;
                 intervalos[j, 1] = hasta;
                 intervalos[j, 2] = frecuenciaEsperada.ToString();
