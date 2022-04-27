@@ -36,7 +36,6 @@ namespace TP03SIMULACION.DistrUniforme
             this.numB = numB;
             this.num = num;
             chrtUniforme.Series.Add(Series1);
-            chrtChi.Series.Add(Series2);
 
 
 
@@ -178,6 +177,7 @@ namespace TP03SIMULACION.DistrUniforme
         {
             dgvFrecuencia.Rows.Clear();
             dgvChi.Rows.Clear();
+            dgvKs.Rows.Clear();
 
 
             double[,] intervalos = calcularIntervalos();
@@ -193,11 +193,13 @@ namespace TP03SIMULACION.DistrUniforme
             }
             generarGrafico(intervalos, frecuenciaObservada);
             String[,] intervalosChi = chiCuadrado();
-           // generarGraficoChi(intervalosChi);
-            // lblCalculado.Text = getAcumulado().ToString();
-            //lblCalculado.Visible = true;
-            //lblTabla.Text = tablaChiCuadrado().ToString();
-            //conclusion();
+           
+            lblCalculado.Text = getAcumulado().ToString();
+            lblCalculado.Visible = true;
+            lblTabla.Text = tablaChiCuadrado().ToString();
+            conclusion();
+            String[,] intervaKs = Ks();
+            evaluarPruebaKS();
         }
 
         public string[,] chiCuadrado()
@@ -259,54 +261,113 @@ namespace TP03SIMULACION.DistrUniforme
 
         public float getAcumulado()
         {
-            return (float)Convert.ToDouble(dgvChi.Rows[dgvChi.Rows.Count - 1].Cells["Css"].Value);
+            return (float)Convert.ToDouble(dgvChi.Rows[dgvChi.Rows.Count - 1].Cells["Cacu2"].Value);
         }
 
 
 
 
 
-
-
-
-
-
-
-
-        public void generarGraficoChi(string[,] intervalos)
+        public void conclusion()
         {
-            chrtChi.Series["Series1"].Points.Clear();
-            chrtChi.Series["Series2"].Points.Clear();
-            chrtChi.Series["Series1"].LegendText = "Frecuencia observada";
-            chrtChi.Series["Series2"].LegendText = "Frecuencia esperada";
+            string txt;
+            if (getAcumulado() < tablaChiCuadrado())
+                txt = "Conclusión: La hipótesis se acepta, los datos se aproximan a una distribución uniforme.";
+            else
+                txt = "Conclusión: La hipótesis no se acepta, los datos no se aproximan a una distribución uniforme.";
 
-            Dictionary<string, double> dic3 = new Dictionary<string, double>();
-            Dictionary<string, float> dic4 = new Dictionary<string, float>();
+            lblConclusion.Text = txt;
+            lblConclusion.Visible = true;
+        }
 
-            int i = 0;
-            while (i < intervalos.GetLength(0) && !(intervalos[i, 0] == null))
+
+
+        public string[,] Ks()
+        {
+            float poAcu = 0;
+            double peAcu = 0;
+            double restaAbsoluta = 0;
+            double max = 0;
+            
+            
+            String[,] intervalos = new String[dgvFrecuencia.Rows.Count, 4];
+            int j = 0;
+            for (int i = 0; i < dgvFrecuencia.Rows.Count; i++)
             {
-                dic3.Add(intervalos[i, 0] + " - " + intervalos[i, 1], Convert.ToInt32(intervalos[i, 2]));
-                dic4.Add(intervalos[i, 0] + " - " + intervalos[i, 1], (float)Convert.ToDouble(intervalos[i, 3]));
-                i++;
+                string desde = dgvFrecuencia.Rows[i].Cells["desde"].Value.ToString();
+                string hasta = dgvFrecuencia.Rows[i].Cells["hasta"].Value.ToString();
+                float frecuenciaEsperada = (float)Convert.ToDouble(dgvFrecuencia.Rows[i].Cells["frecuenciaEsperada"].Value);
+                int frecuenciaObservada = Convert.ToInt32(dgvFrecuencia.Rows[i].Cells["frecuenciaObservada"].Value);
+                double pe = (double)Convert.ToDouble(dgvFrecuencia.Rows[i].Cells["probabilidad"].Value);
+
+
+                poAcu += (float)(frecuenciaObservada / (float)num.Length);
+                peAcu += pe;
+                restaAbsoluta = Math.Abs(poAcu - peAcu);
+                max = restaAbsoluta;
+
+                //falta la ultima columna del KS , la de MAax
+
+                dgvKs.Rows.Add(desde, hasta, frecuenciaEsperada, frecuenciaObservada, (float) (frecuenciaObservada / (float) num.Length) , Math.Round(pe ,4 ) , Math.Round(poAcu,4) , Math.Round(peAcu,4) , Math.Round(restaAbsoluta,4));
+                intervalos[j, 0] = desde;
+                intervalos[j, 1] = hasta;
+                intervalos[j, 2] = frecuenciaEsperada.ToString();
+                intervalos[j, 3] = frecuenciaObservada.ToString();
+                j++;
             }
 
-            foreach (KeyValuePair<string, double> d in dic3)
+            return intervalos;
+
+        }
+
+        private void evaluarPruebaKS()
+        {
+            // para saber si acepta o rechaza la prueba
+            double mayor = 0;
+            lblTab.Text = "";
+            lblCal.Text = "";
+            lblConcl.Text = "";
+
+
+            for (int i = 0; i < dgvKs.Rows.Count; i++)
             {
-                chrtChi.Series["Series1"].Points.AddXY(d.Key, d.Value);
+                //string desde = dgvFrecuencia.Rows[i].Cells["desde"].Value.ToString();
+                double valor_ac = (double)Convert.ToDouble(dgvKs.Rows[i].Cells["absPoacuPeacu"].Value);
+                if (valor_ac > mayor)
+                {
+                    mayor = valor_ac;
+                }
+
             }
 
-            foreach (KeyValuePair<string, float> d in dic4)
-            {
-                chrtChi.Series["Series2"].Points.AddXY(d.Key, d.Value);
-            }
+            // tomando nivel de confianza 0.95 y muestra tamaÃ±o = n
+            double valor = 1.36 / Math.Sqrt(num.Length);
 
+            lblCal.Text += " " + mayor;
+            lblTab.Text += " " + valor;
+            lblCal.Visible = true;
+            lblTab.Visible = true;
+
+            if (valor > mayor)
+            {
+                lblConcl.Text += "Como el valor calculado es menor a la tabla se acepta la hipotesis.";
+            }
+            else
+            {
+                lblConcl.Text += " Como el valor calculado es mayor SE RECHAZA la hipotesis.";
+            }
+            lblConcl.Visible = true;
         }
 
 
 
 
-        
+
+
+
+
+
+
 
 
         private void label2_Click(object sender, EventArgs e)
@@ -319,5 +380,9 @@ namespace TP03SIMULACION.DistrUniforme
 
         }
 
+        private void dgvChi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -17,6 +17,8 @@ namespace TP03SIMULACION
         private double lambda;
         private double media;
         double[] numeros;
+        Random random = new Random();
+
 
         public FormExponencial( double lambda , double media  )
         {
@@ -48,7 +50,6 @@ namespace TP03SIMULACION
 
         public double getRandomVar()
         {
-            Random random = new Random();
 
             double x1 = -(1 / lambda) * Log(1.0 - random.NextDouble());
             return x1;

@@ -29,12 +29,9 @@ namespace TP03SIMULACION.DistrUniforme
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chrtUniforme = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +42,6 @@ namespace TP03SIMULACION.DistrUniforme
             this.FrecuenciaEsperada2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cacu2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chrtChi = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.txtCantIntervalos = new System.Windows.Forms.TextBox();
             this.dgvFrecuencia = new System.Windows.Forms.DataGridView();
             this.desde = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,26 +57,41 @@ namespace TP03SIMULACION.DistrUniforme
             this.lblTabla = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblConclusion = new System.Windows.Forms.Label();
+            this.dgvKs = new System.Windows.Forms.DataGridView();
+            this.desde1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hasta1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.po = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poacu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peacu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.absPoacuPeacu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblConcl = new System.Windows.Forms.Label();
+            this.lblCal = new System.Windows.Forms.Label();
+            this.lblTab = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chrtUniforme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chrtChi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFrecuencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKs)).BeginInit();
             this.SuspendLayout();
             // 
             // chrtUniforme
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chrtUniforme.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chrtUniforme.Legends.Add(legend1);
-            this.chrtUniforme.Location = new System.Drawing.Point(4, 356);
+            chartArea4.Name = "ChartArea1";
+            this.chrtUniforme.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chrtUniforme.Legends.Add(legend4);
+            this.chrtUniforme.Location = new System.Drawing.Point(11, 301);
             this.chrtUniforme.Margin = new System.Windows.Forms.Padding(2);
             this.chrtUniforme.Name = "chrtUniforme";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chrtUniforme.Series.Add(series1);
-            this.chrtUniforme.Size = new System.Drawing.Size(610, 364);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chrtUniforme.Series.Add(series4);
+            this.chrtUniforme.Size = new System.Drawing.Size(603, 364);
             this.chrtUniforme.TabIndex = 0;
             this.chrtUniforme.Text = "DistribucionUniforme";
             this.chrtUniforme.Click += new System.EventHandler(this.chrtUniforme_Click);
@@ -108,6 +119,7 @@ namespace TP03SIMULACION.DistrUniforme
             // 
             // dgvChi
             // 
+            this.dgvChi.AllowUserToAddRows = false;
             this.dgvChi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Desde2,
@@ -116,13 +128,14 @@ namespace TP03SIMULACION.DistrUniforme
             this.FrecuenciaEsperada2,
             this.C2,
             this.Cacu2});
-            this.dgvChi.Location = new System.Drawing.Point(637, 114);
+            this.dgvChi.Location = new System.Drawing.Point(680, 90);
             this.dgvChi.Margin = new System.Windows.Forms.Padding(2);
             this.dgvChi.Name = "dgvChi";
             this.dgvChi.RowHeadersWidth = 51;
             this.dgvChi.RowTemplate.Height = 24;
-            this.dgvChi.Size = new System.Drawing.Size(698, 215);
+            this.dgvChi.Size = new System.Drawing.Size(655, 206);
             this.dgvChi.TabIndex = 9;
+            this.dgvChi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChi_CellContentClick);
             // 
             // Desde2
             // 
@@ -130,7 +143,6 @@ namespace TP03SIMULACION.DistrUniforme
             this.Desde2.MinimumWidth = 6;
             this.Desde2.Name = "Desde2";
             this.Desde2.ReadOnly = true;
-            this.Desde2.Width = 125;
             // 
             // Hasta2
             // 
@@ -138,7 +150,6 @@ namespace TP03SIMULACION.DistrUniforme
             this.Hasta2.MinimumWidth = 6;
             this.Hasta2.Name = "Hasta2";
             this.Hasta2.ReadOnly = true;
-            this.Hasta2.Width = 125;
             // 
             // FrecuenciaObservada2
             // 
@@ -146,7 +157,6 @@ namespace TP03SIMULACION.DistrUniforme
             this.FrecuenciaObservada2.MinimumWidth = 6;
             this.FrecuenciaObservada2.Name = "FrecuenciaObservada2";
             this.FrecuenciaObservada2.ReadOnly = true;
-            this.FrecuenciaObservada2.Width = 125;
             // 
             // FrecuenciaEsperada2
             // 
@@ -154,7 +164,6 @@ namespace TP03SIMULACION.DistrUniforme
             this.FrecuenciaEsperada2.MinimumWidth = 6;
             this.FrecuenciaEsperada2.Name = "FrecuenciaEsperada2";
             this.FrecuenciaEsperada2.ReadOnly = true;
-            this.FrecuenciaEsperada2.Width = 125;
             // 
             // C2
             // 
@@ -162,7 +171,6 @@ namespace TP03SIMULACION.DistrUniforme
             this.C2.MinimumWidth = 6;
             this.C2.Name = "C2";
             this.C2.ReadOnly = true;
-            this.C2.Width = 125;
             // 
             // Cacu2
             // 
@@ -170,25 +178,6 @@ namespace TP03SIMULACION.DistrUniforme
             this.Cacu2.MinimumWidth = 6;
             this.Cacu2.Name = "Cacu2";
             this.Cacu2.ReadOnly = true;
-            this.Cacu2.Width = 125;
-            // 
-            // chrtChi
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chrtChi.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chrtChi.Legends.Add(legend2);
-            this.chrtChi.Location = new System.Drawing.Point(676, 356);
-            this.chrtChi.Margin = new System.Windows.Forms.Padding(2);
-            this.chrtChi.Name = "chrtChi";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chrtChi.Series.Add(series2);
-            this.chrtChi.Size = new System.Drawing.Size(608, 391);
-            this.chrtChi.TabIndex = 10;
-            this.chrtChi.Text = "Chi-Cuadrado";
-            this.chrtChi.Click += new System.EventHandler(this.chrtChi_Click);
             // 
             // txtCantIntervalos
             // 
@@ -201,6 +190,7 @@ namespace TP03SIMULACION.DistrUniforme
             // 
             // dgvFrecuencia
             // 
+            this.dgvFrecuencia.AllowUserToAddRows = false;
             this.dgvFrecuencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFrecuencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.desde,
@@ -209,12 +199,12 @@ namespace TP03SIMULACION.DistrUniforme
             this.frecuenciaObservada,
             this.probabilidad,
             this.frecuenciaEsperada});
-            this.dgvFrecuencia.Location = new System.Drawing.Point(9, 114);
+            this.dgvFrecuencia.Location = new System.Drawing.Point(9, 46);
             this.dgvFrecuencia.Margin = new System.Windows.Forms.Padding(2);
             this.dgvFrecuencia.Name = "dgvFrecuencia";
             this.dgvFrecuencia.RowHeadersWidth = 51;
             this.dgvFrecuencia.RowTemplate.Height = 24;
-            this.dgvFrecuencia.Size = new System.Drawing.Size(605, 215);
+            this.dgvFrecuencia.Size = new System.Drawing.Size(654, 209);
             this.dgvFrecuencia.TabIndex = 12;
             this.dgvFrecuencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFrecuencia_CellContentClick);
             // 
@@ -223,49 +213,43 @@ namespace TP03SIMULACION.DistrUniforme
             this.desde.HeaderText = "Desde";
             this.desde.MinimumWidth = 6;
             this.desde.Name = "desde";
-            this.desde.Width = 125;
             // 
             // hasta
             // 
             this.hasta.HeaderText = "Hasta";
             this.hasta.MinimumWidth = 6;
             this.hasta.Name = "hasta";
-            this.hasta.Width = 125;
             // 
             // marcaClase
             // 
             this.marcaClase.HeaderText = "Marca De Clase";
             this.marcaClase.MinimumWidth = 6;
             this.marcaClase.Name = "marcaClase";
-            this.marcaClase.Width = 125;
             // 
             // frecuenciaObservada
             // 
             this.frecuenciaObservada.HeaderText = "Frecuencia Observada";
             this.frecuenciaObservada.MinimumWidth = 6;
             this.frecuenciaObservada.Name = "frecuenciaObservada";
-            this.frecuenciaObservada.Width = 125;
             // 
             // probabilidad
             // 
             this.probabilidad.HeaderText = "Probabilidad";
             this.probabilidad.MinimumWidth = 6;
             this.probabilidad.Name = "probabilidad";
-            this.probabilidad.Width = 125;
             // 
             // frecuenciaEsperada
             // 
             this.frecuenciaEsperada.HeaderText = "Frecuencia Esperada";
             this.frecuenciaEsperada.MinimumWidth = 6;
             this.frecuenciaEsperada.Name = "frecuenciaEsperada";
-            this.frecuenciaEsperada.Width = 125;
             // 
             // Generar2
             // 
-            this.Generar2.Location = new System.Drawing.Point(343, 6);
+            this.Generar2.Location = new System.Drawing.Point(336, 16);
             this.Generar2.Margin = new System.Windows.Forms.Padding(2);
             this.Generar2.Name = "Generar2";
-            this.Generar2.Size = new System.Drawing.Size(63, 47);
+            this.Generar2.Size = new System.Drawing.Size(104, 26);
             this.Generar2.TabIndex = 13;
             this.Generar2.Text = "Generar Grafico";
             this.Generar2.UseVisualStyleBackColor = true;
@@ -274,7 +258,7 @@ namespace TP03SIMULACION.DistrUniforme
             // lbl2
             // 
             this.lbl2.AutoSize = true;
-            this.lbl2.Location = new System.Drawing.Point(754, 20);
+            this.lbl2.Location = new System.Drawing.Point(739, 40);
             this.lbl2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(84, 13);
@@ -285,7 +269,7 @@ namespace TP03SIMULACION.DistrUniforme
             // lblCalculado
             // 
             this.lblCalculado.AutoSize = true;
-            this.lblCalculado.Location = new System.Drawing.Point(842, 20);
+            this.lblCalculado.Location = new System.Drawing.Point(835, 39);
             this.lblCalculado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCalculado.Name = "lblCalculado";
             this.lblCalculado.Size = new System.Drawing.Size(0, 13);
@@ -294,7 +278,7 @@ namespace TP03SIMULACION.DistrUniforme
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(754, 54);
+            this.label2.Location = new System.Drawing.Point(739, 16);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 13);
@@ -304,7 +288,7 @@ namespace TP03SIMULACION.DistrUniforme
             // lblTabla
             // 
             this.lblTabla.AutoSize = true;
-            this.lblTabla.Location = new System.Drawing.Point(835, 54);
+            this.lblTabla.Location = new System.Drawing.Point(830, 14);
             this.lblTabla.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTabla.Name = "lblTabla";
             this.lblTabla.Size = new System.Drawing.Size(0, 13);
@@ -313,7 +297,7 @@ namespace TP03SIMULACION.DistrUniforme
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(754, 81);
+            this.label3.Location = new System.Drawing.Point(739, 65);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
@@ -324,18 +308,139 @@ namespace TP03SIMULACION.DistrUniforme
             // lblConclusion
             // 
             this.lblConclusion.AutoSize = true;
-            this.lblConclusion.Location = new System.Drawing.Point(823, 81);
+            this.lblConclusion.Location = new System.Drawing.Point(815, 65);
             this.lblConclusion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConclusion.Name = "lblConclusion";
             this.lblConclusion.Size = new System.Drawing.Size(0, 13);
             this.lblConclusion.TabIndex = 19;
+            // 
+            // dgvKs
+            // 
+            this.dgvKs.AllowUserToAddRows = false;
+            this.dgvKs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.desde1,
+            this.hasta1,
+            this.fo,
+            this.fe,
+            this.po,
+            this.pe,
+            this.poacu,
+            this.peacu,
+            this.absPoacuPeacu});
+            this.dgvKs.Location = new System.Drawing.Point(680, 311);
+            this.dgvKs.Name = "dgvKs";
+            this.dgvKs.Size = new System.Drawing.Size(605, 255);
+            this.dgvKs.TabIndex = 20;
+            // 
+            // desde1
+            // 
+            this.desde1.HeaderText = "Desde";
+            this.desde1.Name = "desde1";
+            this.desde1.Width = 60;
+            // 
+            // hasta1
+            // 
+            this.hasta1.HeaderText = "Hasta";
+            this.hasta1.Name = "hasta1";
+            this.hasta1.Width = 60;
+            // 
+            // fo
+            // 
+            this.fo.HeaderText = "Frecuencia Observada";
+            this.fo.Name = "fo";
+            this.fo.Width = 60;
+            // 
+            // fe
+            // 
+            this.fe.HeaderText = "Frecuencia Esperada";
+            this.fe.Name = "fe";
+            this.fe.Width = 60;
+            // 
+            // po
+            // 
+            this.po.HeaderText = "Po";
+            this.po.Name = "po";
+            this.po.Width = 60;
+            // 
+            // pe
+            // 
+            this.pe.HeaderText = "Pe";
+            this.pe.Name = "pe";
+            this.pe.Width = 60;
+            // 
+            // poacu
+            // 
+            this.poacu.HeaderText = "Po(acu)";
+            this.poacu.Name = "poacu";
+            this.poacu.Width = 60;
+            // 
+            // peacu
+            // 
+            this.peacu.HeaderText = "Pe(acu)";
+            this.peacu.Name = "peacu";
+            this.peacu.Width = 60;
+            // 
+            // absPoacuPeacu
+            // 
+            this.absPoacuPeacu.HeaderText = "l Po(Acu) - Pe(Acu) l";
+            this.absPoacuPeacu.Name = "absPoacuPeacu";
+            this.absPoacuPeacu.Width = 80;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(683, 584);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Valor calculado:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(683, 608);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Valor tabulado:";
+            // 
+            // lblConcl
+            // 
+            this.lblConcl.AutoSize = true;
+            this.lblConcl.Location = new System.Drawing.Point(689, 635);
+            this.lblConcl.Name = "lblConcl";
+            this.lblConcl.Size = new System.Drawing.Size(0, 13);
+            this.lblConcl.TabIndex = 23;
+            // 
+            // lblCal
+            // 
+            this.lblCal.AutoSize = true;
+            this.lblCal.Location = new System.Drawing.Point(770, 582);
+            this.lblCal.Name = "lblCal";
+            this.lblCal.Size = new System.Drawing.Size(0, 13);
+            this.lblCal.TabIndex = 24;
+            // 
+            // lblTab
+            // 
+            this.lblTab.AutoSize = true;
+            this.lblTab.Location = new System.Drawing.Point(770, 609);
+            this.lblTab.Name = "lblTab";
+            this.lblTab.Size = new System.Drawing.Size(0, 13);
+            this.lblTab.TabIndex = 25;
             // 
             // FormGraficoUniforme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1171, 609);
+            this.ClientSize = new System.Drawing.Size(1370, 743);
+            this.Controls.Add(this.lblTab);
+            this.Controls.Add(this.lblCal);
+            this.Controls.Add(this.lblConcl);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dgvKs);
             this.Controls.Add(this.lblConclusion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTabla);
@@ -345,7 +450,6 @@ namespace TP03SIMULACION.DistrUniforme
             this.Controls.Add(this.Generar2);
             this.Controls.Add(this.dgvFrecuencia);
             this.Controls.Add(this.txtCantIntervalos);
-            this.Controls.Add(this.chrtChi);
             this.Controls.Add(this.dgvChi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVolver);
@@ -356,8 +460,8 @@ namespace TP03SIMULACION.DistrUniforme
             this.Load += new System.EventHandler(this.FormGraficoUniforme_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chrtUniforme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chrtChi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFrecuencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,15 +473,8 @@ namespace TP03SIMULACION.DistrUniforme
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvChi;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chrtChi;
         private System.Windows.Forms.TextBox txtCantIntervalos;
         private System.Windows.Forms.DataGridView dgvFrecuencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desde;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hasta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn marcaClase;
-        private System.Windows.Forms.DataGridViewTextBoxColumn frecuenciaObservada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn probabilidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn frecuenciaEsperada;
         private System.Windows.Forms.Button Generar2;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lblCalculado;
@@ -391,5 +488,26 @@ namespace TP03SIMULACION.DistrUniforme
         private System.Windows.Forms.DataGridViewTextBoxColumn FrecuenciaEsperada2;
         private System.Windows.Forms.DataGridViewTextBoxColumn C2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cacu2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hasta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaClase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn frecuenciaObservada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn probabilidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn frecuenciaEsperada;
+        private System.Windows.Forms.DataGridView dgvKs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desde1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hasta1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn po;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poacu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peacu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn absPoacuPeacu;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblConcl;
+        private System.Windows.Forms.Label lblCal;
+        private System.Windows.Forms.Label lblTab;
     }
 }
